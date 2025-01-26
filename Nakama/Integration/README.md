@@ -11,18 +11,9 @@ To start using nakama into your project, You'll need to use the Nakama SDK in yo
 
 To start using Nakama and its features, first of all you're gonna need to create a new client at the game startup, and then authenticate the user. then and only then you can start using Nakama. To do so, create a file responsible for managing nakama (suggested to use [singletone pattern](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Design-Patterns/Singletone-Pattern/README.md)). Let's call it **NakamaManager.cs**
 
+## Initialize the Client:
 
-
-
-
-
-
-
-
-
-
-
-## Initialize the Client: In the **NakamaManager.cs**, set up the client to connect to your Nakama server. For instance,:
+In the **NakamaManager.cs**, set up the client to connect to your Nakama server. For instance,:
 
   ```csharp
   var client = new Client("http", "localhost", 7350, "defaultkey");
@@ -75,18 +66,9 @@ Nakama supports various authentication methods:
 
 By following these steps, you can effectively integrate Nakama into your project and manage user authentication. 
 
+## Advanced Example:
 
-
-
-
-
-
-
-
-
-
-
-Here is an advanced Example of how to create a client and authenticate users with nakama by the user's device ID
+Here is an advanced Example of how to create a client and authenticate users with nakama by the user's device ID. this script first checks if the session is still valid. if so, it will restore it, and if not, it will reauthenticate the user and save the auth token and the refresh token to the player prefs.
 ~~~csharp
 using UnityEngine;
 using Nakama;
