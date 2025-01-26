@@ -1,5 +1,5 @@
 
-# Internship Learning Documentation 📘
+# Unity Internship Learning Documentation 📘
 
 Welcome to the documentation of my journey as a **Unity Game Developer Intern**! This repository serves as a reflection of the knowledge, experiences, and challenges I encountered during my internship. It includes detailed notes, tutorials, and practical examples of the concepts I learned, aiming to help others and serve as a personal reference for future endeavors.
 
