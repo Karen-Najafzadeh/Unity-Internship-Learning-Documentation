@@ -23,5 +23,11 @@ Nakama is suitable for a wide range of applications, including mobile, console, 
 here you can find step by step guid on how to use nakama in your project
 
 ### 1# setting up the server:
-[how to set up a local nakama server](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Nakama/Initialization/Readme.md)
+[how to set up a local nakama server?](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Nakama/Initialization/Readme.md)
+
+Here you'll learn how to set up a local Nakama server by using typescript and create leaderboards.
+
+### 2# Integration
 [how to create a client and authenticate user](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Nakama/Integration/README.md)
+
+Here you can find information about how to create a client and connect to the Nakama server and authenticate users
