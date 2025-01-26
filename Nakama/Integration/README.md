@@ -11,6 +11,81 @@ To start using nakama into your project, You'll need to use the Nakama SDK in yo
 
 To start using Nakama and its features, first of all you're gonna need to create a new client at the game startup, and then authenticate the user. then and only then you can start using Nakama. To do so, create a file responsible for managing nakama (suggested to use [singletone pattern](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Design-Patterns/Singletone-Pattern/README.md)). Let's call it **NakamaManager.cs**
 
+
+
+
+
+
+
+
+
+
+
+
+## Initialize the Client: In the **NakamaManager.cs**, set up the client to connect to your Nakama server. For instance,:
+
+  ```csharp
+  var client = new Client("http", "localhost", 7350, "defaultkey");
+  ```
+
+## Authenticate Users:
+
+Nakama supports various authentication methods:
+
+- **Device Authentication:** Ideal for guest users or when you don't require a permanent account.
+
+  - **Process:** Authenticate using a unique device identifier.
+
+  - **Example:**
+
+    ```csharp
+    var deviceId = SystemInfo.deviceUniqueIdentifier;
+    var session = await client.AuthenticateDeviceAsync(deviceId, true, "custom_username");
+    // the true parameter means if there is no account corresponding with the unique id provided, The Nakama client will create one
+    ```
+
+- **Email and Password Authentication:** Suitable for users who prefer traditional login methods.
+
+  - **Process:** Authenticate using an email address and password.
+
+  - **Example:**
+
+    ```csharp
+    var email = "user@example.com";
+    var password = "securepassword";
+    var session = await client.AuthenticateEmailAsync(email, password, true, "custom_username");
+    ```
+
+- **Social Provider Authentication:** Allows users to log in using their social media accounts.
+
+  - **Process:** Authenticate using tokens from services like Facebook, Google, or Apple.
+
+  - **Example:**
+
+    ```csharp
+    var oauthToken = "your_social_oauth_token_like_facebook_token";
+    var session = await client.AuthenticateFacebookAsync(oauthToken, true, "custom_username");
+    ```
+
+## Manage User Sessions:
+
+- **Session Object:** Upon successful authentication, Nakama returns a session object containing user details and an authentication token.
+
+- **Usage:** Use this session token for subsequent requests to authenticate the user.
+
+By following these steps, you can effectively integrate Nakama into your project and manage user authentication. 
+
+
+
+
+
+
+
+
+
+
+
+
 Here is an advanced Example of how to create a client and authenticate users with nakama by the user's device ID
 ~~~csharp
 using UnityEngine;
