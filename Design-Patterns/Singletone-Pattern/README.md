@@ -62,3 +62,10 @@ public class SingleToneClass<T> : MonoBehaviour where T : MonoBehaviour
     }
 }
 ~~~
+now we can use it to make each class, a singletone class:
+
+~~~csharp
+public class GameManager : SingleToneClass<GameManager> {
+    // tadaaaaa, no actions needed, it's already using singletone pattern
+}
+~~~
