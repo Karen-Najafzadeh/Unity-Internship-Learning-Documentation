@@ -18,11 +18,11 @@ This repository contains:
 
 ## 📂 Table of Contents
 
-1. **[design patterns](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns?ref_type=heads)**  
+1. **[design patterns](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns)**  
   
-2. **[Nakama](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Nakama?ref_type=heads)**   
+2. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
 
-3. **[Object Pooling](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/ObjectPooling?ref_type=heads)**  
+3. **[Object Pooling](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/ObjectPooling)**  
 
 
 ---

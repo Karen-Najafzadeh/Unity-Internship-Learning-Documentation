@@ -3,7 +3,7 @@ Nakama Storage is a powerful feature that allows you to save, retrieve, update, 
 ---
 # Recommendation
 
-**I highly encourage you** to read **[this document](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Nakama/Integration?ref_type=heads)** as it shows you how to initialize nakama client on your project, because the following code uses session authentication and initializing nakama client, and if you are unfamiliar with this concept, you might get into some trouble understanding the content.
+**I highly encourage you** to read **[this document](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Integration)** as it shows you how to initialize nakama client on your project, because the following code uses session authentication and initializing nakama client, and if you are unfamiliar with this concept, you might get into some trouble understanding the content.
 
 ---
 
