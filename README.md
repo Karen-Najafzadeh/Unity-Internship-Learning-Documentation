@@ -18,11 +18,11 @@ This repository contains:
 
 ## 📂 Table of Contents
 
-1. **[design patterns](https://github.com/Karen-Najafzadeh/to-learn-list/tree/main/Design-Patterns)**  
+1. **[design patterns](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns?ref_type=heads)**  
   
-2. **[Nakama](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Nakama/README.md)**   
+2. **[Nakama](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Nakama?ref_type=heads)**   
 
-3. **[Object Pooling](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/ObjectPooling/README.md)**  
+3. **[Object Pooling](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/ObjectPooling?ref_type=heads)**  
 
 
 ---
@@ -50,7 +50,7 @@ If you’d like to connect or discuss game development, feel free to reach out:
 
 - **Email:** [najafzadehkaren@gmail.com](najafzadehkaren@gmail.com)  
 - **LinkedIn:** [LinkedIn Profile](www.linkedin.com/in/karen-najafzadeh-13b349200) 
-- **Telegram: https://t.me/Karen_N_Z
+- **Telegram:** https://t.me/Karen_N_Z
 ---
 
 This documentation is a way to give back to the community while documenting my growth as a developer. I hope it helps others in their journey as much as it has helped me!

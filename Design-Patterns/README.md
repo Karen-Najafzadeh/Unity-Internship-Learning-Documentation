@@ -12,12 +12,12 @@ Design patterns are reusable solutions to common problems that arise during soft
 
 ## 📂 Table of Contents  
 
-1. **[Singleton Pattern](https://github.com/Karen-Najafzadeh/to-learn-list/blob/main/Design-Patterns/Singletone-Pattern/README.md)**  
-2. **Factory Pattern**  
-3. **Observer Pattern**  
-4. **State Pattern**  
-5. **Object Pooling**  
-6. **Command Pattern**  
+1. **[Singleton Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Singletone-Pattern?ref_type=heads)**  
+2. **[Factory Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Factory-Pattern?ref_type=heads)**  
+3. **[Observer Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Observer-Pattern?ref_type=heads)**  
+4. **[State Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/State-Pattern?ref_type=heads)**  
+5. **[Strategy-Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Strategy-Pattern)**  
+6. **[Command Pattern](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Command-Pattern)**  
 
 ---
 
