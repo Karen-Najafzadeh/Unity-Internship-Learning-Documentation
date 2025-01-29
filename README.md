@@ -20,15 +20,15 @@ This repository contains:
 
 1. **[design patterns](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns)**  
   
-2. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
+2. **[Delegates](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Delegates)**   
 
-3. **[Object Pooling](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/ObjectPooling?ref_type=heads)**
+3. **[Object Pooling](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/ObjectPooling)**
 
-4. **[Asynchronous programming](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Asynchronous%20programming?ref_type=heads)**
+4. **[Asynchronous programming](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming)**
 
-5. **[Events and Actions](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Events?ref_type=heads)**
+5. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
 
-6. **[Nakama](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Nakama?ref_type=heads)**   
+6. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
 
 
 
