@@ -224,5 +224,3 @@ public class CoroutineDelegateExample : MonoBehaviour {
 ✅ **Delegates** are powerful tools in Unity for creating **dynamic, flexible, and modular code**.  
 ✅ **Events** provide **safe, encapsulated** event handling.  
 ✅ **Lambda expressions and `Action<>`/`Func<>`** make coding **concise and readable**.
-
-Let me know if you want deeper explanations or practical examples! 🚀
