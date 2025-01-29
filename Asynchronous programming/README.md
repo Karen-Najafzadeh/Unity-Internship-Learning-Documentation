@@ -54,10 +54,10 @@ A **Task** represents an operation that may run asynchronously and return a resu
 ## **4. Examples in C# (Unity)**
 Let’s explore how **asynchronous programming** works in C# (Unity). See these guides below to understand different ways of asynchronous programming.
 
-### **[Coroutines](./Coroutines/README.md)**
+### **[Coroutines](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming/Coroutines)**
 Coroutines are a Unity-specific way to handle asynchronous operations without blocking the main thread. They are useful for tasks like waiting for a few seconds or handling animations.
 
-### **[Tasks](./Tasks/README.md)**
+### **[Tasks](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming/Tasks)**
 Tasks in C# provide a more flexible and powerful way to handle asynchronous operations. They allow you to return values and handle exceptions more easily compared to coroutines.
 
 ---
