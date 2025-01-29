@@ -51,7 +51,7 @@ public class PublisherClass : SingletonClass<PublisherClass> {
 }
 ```
 
-The SingletonClass we inherited from is a class that I made that enables us to use the singleton pattern. For more info and to see the code, [Click here](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Design-Patterns/Singletone-Pattern#making-it-easier).
+The SingletonClass we inherited from is a class that I made that enables us to use the singleton pattern. For more info and to see the code, [Click here](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Singletone-Pattern#making-it-easier).
 
 The **?** and **.Invoke()** after the event are for checking if the event is not null and only then, triggers the event.
 

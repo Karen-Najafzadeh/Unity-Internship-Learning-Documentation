@@ -175,7 +175,7 @@ public class EventExample : MonoBehaviour {
     }
 }
 ```
-✅ **Use events when multiple scripts should respond to a trigger** (e.g., UI updates, player actions). **[See more about Events](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Events?ref_type=heads)**
+✅ **Use events when multiple scripts should respond to a trigger** (e.g., UI updates, player actions). **[See more about Events](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
 
 ---
 
