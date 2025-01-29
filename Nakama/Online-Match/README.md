@@ -1,4 +1,4 @@
-Creating and managing multiplayer matches in Nakama involves setting up the server, creating and joining matches, and handling match states and opcodes. So I recommend you to see the [corresponding document](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Integration) on how to integrate Nakama SDK into your project first.
+Creating and managing multiplayer matches in Nakama involves setting up the server, creating and joining matches, and handling match states and opcodes. So I recommend you to see the [corresponding document](https://gitlab.com/mediahamrah_game/internship-to-learn-list/-/tree/najafzadehkaren-main/Nakama/Integration?ref_type=heads) on how to integrate Nakama SDK into your project first.
 
 After learning how to create a client and authenticate the user, then you're ready to jump into creating a multiplayer project. Here's a detailed guide to help you through the process:
 
