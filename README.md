@@ -26,6 +26,8 @@ This repository contains:
 
 4. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
 
+5. **[Queues](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Queues)**
+
 5. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
 
 
