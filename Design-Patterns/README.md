@@ -18,6 +18,7 @@ Design patterns are reusable solutions to common problems that arise during soft
 4. **[State Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/State-Pattern)**  
 5. **[Strategy-Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Strategy-Pattern)**  
 6. **[Command Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Command-Pattern)**  
+7. **[Object Pooling](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/ObjectPooling)**
 
 ---
 

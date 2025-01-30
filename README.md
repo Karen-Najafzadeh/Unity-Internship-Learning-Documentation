@@ -22,13 +22,11 @@ This repository contains:
   
 2. **[Delegates](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Delegates)**   
 
-3. **[Object Pooling](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/ObjectPooling)**
+3. **[Asynchronous programming](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming)**
 
-4. **[Asynchronous programming](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming)**
+4. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
 
-5. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
-
-6. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
+5. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
 
 
 
