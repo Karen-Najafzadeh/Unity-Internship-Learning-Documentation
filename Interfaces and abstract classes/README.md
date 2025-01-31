@@ -388,5 +388,3 @@ public class Game : MonoBehaviour
 | **Override Keyword** | When you want to change the behavior of a virtual or abstract method in a derived class. |
 
 These concepts are useful in Unity for implementing **damage systems, AI behavior, UI elements, and more** while keeping your code flexible and reusable.
-
-Would you like examples related to a specific Unity use case? 🚀
