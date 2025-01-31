@@ -20,20 +20,24 @@ This repository contains:
 
 1. **[design patterns](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns)**  
 
-2. **[Abstract cclasses and Interfaces](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Interfaces%20and%20abstract%20classes)**
+2. **[State Machine](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/State%20Machine)**
+
+3. **[Abstract cclasses and Interfaces](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Interfaces%20and%20abstract%20classes)**
 
 
-3. **[Delegates](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Delegates)**   
+4. **[Delegates](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Delegates)**   
 
-4. **[Asynchronous programming](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming)**
+5. **[Asynchronous programming](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Asynchronous%20programming)**
 
-5. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
+6. **[Events and Actions](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
 
-6. **[Queues](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Queues)**
+7. **[Queues](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Queues)**
 
-7. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
+8. **[Nakama](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama)**   
 
-8. **[Common Git commands](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Common%20Git%20Commands)**
+9. **[Common Git commands](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Common%20Git%20Commands)**
+
+10. **[Dependency Injection](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Dependency%20Injection)**
 
 
 
