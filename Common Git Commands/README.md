@@ -4,10 +4,17 @@ Git is an essential tool for version control, especially for developers working 
 
 ---
 
+## **0. Install Git**
+
+First of all download and install the Git command tools via [this link](https://git-scm.com/downloads)
+
 ## **1. Git Configuration Commands**
 Before using Git, you should configure it with your name and email.
 
 ### **1.1 Set up your username and email**
+
+Open up a terminal (Git Bash is recommended) :
+
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
