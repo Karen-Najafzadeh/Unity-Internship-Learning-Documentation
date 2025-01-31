@@ -27,7 +27,6 @@ git config --list
 ```sh
 git init
 ```
-- Creates a new Git repository in the current directory.
 
 ### **2.2 Clone an existing repository**
 ```sh
@@ -38,6 +37,10 @@ Example:
 git clone https://github.com/user/repo.git
 ```
 - Downloads a repository and all its history.
+- Cloning into a specific directory:
+  ```sh
+  git clone https://github.com/user/repo.git my-directory
+  ```
 
 ---
 
@@ -343,6 +346,10 @@ git tag -d <tag_name>
 ```
 
 ---
+
+## Use Github Desktop
+
+Alternatively, you can download and install the Github Desktop and use the GUI instead. You can download and install via [this link](https://desktop.github.com/download/).
 
 ## **Conclusion**
 These are the essential Git commands you’ll use frequently. If you're working with Unity, **always be careful with `git reset --hard` and merging branches**, as it can overwrite files permanently.
