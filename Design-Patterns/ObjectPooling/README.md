@@ -216,4 +216,206 @@ public class SingleToneClass<T> : MonoBehaviour where T : MonoBehaviour
 
 --- 
 
-Let me know if you'd like to add more details or real-world examples. 😊
+
+### **Combining Factory Method and Object Pooling Patterns in Unity**  
+
+By combining **Factory Method** and **Object Pooling**, we can create enemies efficiently while managing memory usage by reusing instances instead of creating and destroying them repeatedly.
+
+---
+
+## **Step-by-Step Guide**
+### **1. Define the Base Class (`Enemy`)**
+We create an abstract base class for enemies, defining common behavior.
+
+```csharp
+using UnityEngine;
+
+public abstract class Enemy : MonoBehaviour
+{
+    public abstract void Attack();
+
+    public virtual void OnSpawn()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public virtual void OnDespawn()
+    {
+        gameObject.SetActive(false);
+    }
+}
+```
+✔ **Why?**  
+- Provides a common interface for all enemies.  
+- `OnSpawn()` and `OnDespawn()` will be used for pooling logic.
+
+---
+
+### **2. Implement Specific Enemy Types**
+Each enemy type inherits from `Enemy` and defines its own behavior.
+
+```csharp
+public class Zombie : Enemy
+{
+    public override void Attack()
+    {
+        Debug.Log("Zombie attacks!");
+    }
+}
+
+public class Skeleton : Enemy
+{
+    public override void Attack()
+    {
+        Debug.Log("Skeleton attacks!");
+    }
+}
+```
+✔ **Why?**  
+- Follows **polymorphism**: Each enemy has its own unique behavior.  
+- They can be extended without modifying existing code (Open-Closed Principle).
+
+---
+
+### **3. Create the `EnemyFactory` to Generate Enemies**
+Instead of creating enemies manually, we use a **factory method** to centralize enemy instantiation.
+
+```csharp
+using UnityEngine;
+
+public class EnemyFactory : MonoBehaviour
+{
+    [SerializeField] private GameObject zombiePrefab;
+    [SerializeField] private GameObject skeletonPrefab;
+
+    public Enemy CreateEnemy(string enemyType)
+    {
+        switch (enemyType)
+        {
+            case "Zombie":
+                return Instantiate(zombiePrefab).GetComponent<Zombie>();
+            case "Skeleton":
+                return Instantiate(skeletonPrefab).GetComponent<Skeleton>();
+            default:
+                throw new System.Exception("Unknown enemy type");
+        }
+    }
+}
+```
+✔ **Why?**  
+- Centralized logic for creating different enemy types.  
+- Can be extended by adding more enemy types without changing client code.
+
+---
+
+### **4. Implement the `EnemyPoolManager` for Object Pooling**
+Instead of constantly creating and destroying enemies, we reuse them with Unity’s `ObjectPool<T>`.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Pool;
+
+public class EnemyPoolManager : MonoBehaviour
+{
+    [SerializeField] private EnemyFactory enemyFactory;
+
+    private ObjectPool<Enemy> zombiePool;
+    private ObjectPool<Enemy> skeletonPool;
+
+    private void Start()
+    {
+        zombiePool = new ObjectPool<Enemy>(
+            () => enemyFactory.CreateEnemy("Zombie"), 
+            enemy => enemy.OnSpawn(),
+            enemy => enemy.OnDespawn(),
+            enemy => Destroy(enemy.gameObject),
+            true, 5, 10);
+
+        skeletonPool = new ObjectPool<Enemy>(
+            () => enemyFactory.CreateEnemy("Skeleton"), 
+            enemy => enemy.OnSpawn(),
+            enemy => enemy.OnDespawn(),
+            enemy => Destroy(enemy.gameObject),
+            true, 5, 10);
+    }
+
+    public Enemy GetEnemy(string enemyType)
+    {
+        return enemyType switch
+        {
+            "Zombie" => zombiePool.Get(),
+            "Skeleton" => skeletonPool.Get(),
+            _ => throw new System.Exception("Unknown enemy type")
+        };
+    }
+
+    public void ReleaseEnemy(Enemy enemy)
+    {
+        if (enemy is Zombie)
+            zombiePool.Release(enemy);
+        else if (enemy is Skeleton)
+            skeletonPool.Release(enemy);
+    }
+}
+```
+✔ **Why?**  
+- Uses **Unity’s ObjectPool<T>** to manage enemy instances.  
+- `OnSpawn()` activates the enemy when retrieved from the pool.  
+- `OnDespawn()` deactivates the enemy instead of destroying it.  
+- Reduces garbage collection, improving performance.
+
+---
+
+### **5. Using the System in a Game Manager**
+Now, let's integrate the pooling and factory system in a game manager.
+
+```csharp
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] private EnemyPoolManager enemyPoolManager;
+
+    private void Start()
+    {
+        // Spawn enemies from the pool
+        Enemy zombie = enemyPoolManager.GetEnemy("Zombie");
+        zombie.Attack();
+
+        Enemy skeleton = enemyPoolManager.GetEnemy("Skeleton");
+        skeleton.Attack();
+
+        // After some time, release them back to the pool
+        Invoke(nameof(ReleaseEnemies), 3f);
+    }
+
+    private void ReleaseEnemies()
+    {
+        // Assume we store references to enemies when spawning them
+        enemyPoolManager.ReleaseEnemy(FindObjectOfType<Zombie>());
+        enemyPoolManager.ReleaseEnemy(FindObjectOfType<Skeleton>());
+    }
+}
+```
+✔ **Why?**  
+- **Retrieves enemies from the pool**, instead of instantiating new ones.  
+- **Releases enemies back to the pool**, improving performance.
+
+---
+
+## **Final Summary**
+1. **Factory Method Pattern**:  
+   - `EnemyFactory` is responsible for creating enemy objects dynamically.  
+   - Allows easy addition of new enemy types without modifying existing logic.  
+
+2. **Object Pooling Pattern**:  
+   - `EnemyPoolManager` stores and reuses enemies instead of constantly creating/destroying them.  
+   - `OnSpawn()` and `OnDespawn()` manage activation/deactivation instead of destruction.  
+
+### **Advantages of This Combination**
+✅ **Performance Optimization** – Avoids frequent instantiation and destruction of enemies.  
+✅ **Scalability** – Easily extendable to add new enemy types.  
+✅ **Memory Efficiency** – Reduces garbage collection and improves FPS stability.  
+✅ **Encapsulation & Maintainability** – Centralizes creation and pooling logic, keeping code modular.
+
+This pattern combination is widely used in **games that spawn multiple objects**, such as **wave-based survival games, bullet hell shooters, and RTS games**. 🚀
