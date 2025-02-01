@@ -40,6 +40,8 @@ This repository contains:
 10. **[Dependency Injection](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Dependency%20Injection)**
 
 
+11. **[Firebase](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Firebase)**
+
 
 ---
 
