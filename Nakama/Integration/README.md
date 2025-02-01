@@ -9,7 +9,7 @@ To start using nakama into your project, You'll need to use the Nakama SDK in yo
 
 ## Using Nakama in the project
 
-To start using Nakama and its features, first of all you're gonna need to create a new client at the game startup, and then authenticate the user. then and only then you can start using Nakama. To do so, create a file responsible for managing nakama (suggested to use [singletone pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Singletone-Pattern)). Let's call it **NakamaManager.cs**
+To start using Nakama and its features, first of all you're gonna need to create a new client at the game startup, and then authenticate the user. then and only then you can start using Nakama. To do so, create a file responsible for managing nakama (suggested to use [singletone pattern](../../Design-Patterns/Singletone-Pattern/)). Let's call it **NakamaManager.cs**
 
 ## Initialize the Client:
 

@@ -12,13 +12,13 @@ Design patterns are reusable solutions to common problems that arise during soft
 
 ## 📂 Table of Contents  
 
-1. **[Singleton Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Singletone-Pattern)**  
-2. **[Factory Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Factory-Pattern)**  
-3. **[Observer Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Observer-Pattern)**  
-4. **[State Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/State-Pattern)**  
-5. **[Strategy-Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Strategy-Pattern)**  
-6. **[Command Pattern](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Design-Patterns/Command-Pattern)**  
-7. **[Object Pooling](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/ObjectPooling)**
+1. **[Singleton Pattern](./Singletone-Pattern/)**  
+2. **[Factory Pattern](./Factory-Pattern/)**  
+3. **[Observer Pattern](./Observer-Pattern/)**  
+4. **[State Pattern](./State-Pattern/)**  
+5. **[Strategy-Pattern](./Strategy-Pattern/)**  
+6. **[Command Pattern](./Command-Pattern/)**  
+7. **[Object Pooling](./ObjectPooling/)**
 
 ---
 
@@ -41,3 +41,5 @@ Design patterns are reusable solutions to common problems that arise during soft
 Feel free to explore and contribute by sharing your ideas or implementations of other design patterns in Unity!  
 
 --- 
+
+Let me know if you'd like any additional sections or modifications!

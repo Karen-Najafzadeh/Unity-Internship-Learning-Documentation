@@ -175,7 +175,7 @@ public class EventExample : MonoBehaviour {
     }
 }
 ```
-✅ **Use events when multiple scripts should respond to a trigger** (e.g., UI updates, player actions). **[See more about Events](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Events)**
+✅ **Use events when multiple scripts should respond to a trigger** (e.g., UI updates, player actions). **[See more about Events](../Events/)**
 
 ---
 
@@ -224,3 +224,5 @@ public class CoroutineDelegateExample : MonoBehaviour {
 ✅ **Delegates** are powerful tools in Unity for creating **dynamic, flexible, and modular code**.  
 ✅ **Events** provide **safe, encapsulated** event handling.  
 ✅ **Lambda expressions and `Action<>`/`Func<>`** make coding **concise and readable**.
+
+Let me know if you want deeper explanations or practical examples! 🚀

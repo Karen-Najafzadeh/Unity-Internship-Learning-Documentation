@@ -213,4 +213,4 @@ Ensure that you have node and Docker Descktop installed on your machine. you can
   for more information see the official docs **[Here](https://heroiclabs.com/docs/nakama/server-framework/typescript-runtime/)**
 
 ## Next Step: ##
-  [integrating Nakama into your project](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Integration)
+  [integrating Nakama into your project](../Integration/)

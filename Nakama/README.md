@@ -23,21 +23,21 @@ Nakama is suitable for a wide range of applications, including mobile, console, 
 here you can find step by step guid on how to use nakama in your project
 
 ### 1# setting up the server:
-[how to set up a local nakama server?](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Initialization)
+[how to set up a local nakama server?](./Initialization/)
 
 Here you'll learn how to set up a local Nakama server by using typescript and create leaderboards.
 
 ### 2# Integration
-[how to create a client and authenticate user](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Integration)
+[how to create a client and authenticate user](./Integration/)
 
 Here you can find information about how to create a client and connect to the Nakama server and authenticate users
 
 ### 3# Nakama Storage
-[How to use Nakama Storage, read, wtire, delete and update data](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Nakama-Storage)
+[How to use Nakama Storage, read, wtire, delete and update data](./Nakama-Storage/)
 
 ### 4# Nakama Leaderboard
-[how to read, write and edit data records to a Nakama Leaderboard](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Leaderboards)
+[how to read, write and edit data records to a Nakama Leaderboard](./Leaderboards/)
 
 ### 5# Nakama Online Match
-[how to handle matches and matchmaking using Nakama in unity](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Online-Match)
+[how to handle matches and matchmaking using Nakama in unity](./Online-Match/)
 

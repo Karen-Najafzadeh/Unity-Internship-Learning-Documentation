@@ -2,7 +2,7 @@ Leaderboards are a fundamental feature in many games, fostering competition and 
 
 **1. Setting Up Nakama in Unity**
 
-Before diving into leaderboards, ensure that Nakama is properly integrated into your Unity project. See [Integrating nakama into your project](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Integration)
+Before diving into leaderboards, ensure that Nakama is properly integrated into your Unity project. See [Integrating nakama into your project](../Integration/)
 
 - **Initialize the Client and Socket**: Set up the Nakama client and establish a socket connection.
 
@@ -35,7 +35,7 @@ Before diving into leaderboards, ensure that Nakama is properly integrated into 
 
 Leaderboards in Nakama can be created server-side using the server runtime environment. This ensures that the leaderboard is properly configured and managed.
 
-I've explained **[Here](https://github.com/Karen-Najafzadeh/Unity-Internship-Learning-Documentation/tree/main/Nakama/Initialization)** how to create a leaderboard from server-side.
+I've explained **[Here](../Initialization/)** how to create a leaderboard from server-side.
 
 
 **3. Writing a Leaderboard Record**
