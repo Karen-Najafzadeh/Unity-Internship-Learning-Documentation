@@ -40,6 +40,8 @@ This repository contains:
 
 11. **[Firebase](./Firebase/)**
 
+12. **[Editor Scripting](./Editor%20Scripting/)**
+
 
 
 ---
