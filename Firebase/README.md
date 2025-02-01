@@ -60,18 +60,20 @@ Attach this script to an empty GameObject in the first scene of your game.
 # **2. Implementing Firebase Features in Unity**
 
 ## **2.1 Authentication (User Sign-In & Sign-Out)**
-To learn more, see [this link]()
+
+Firebase Authentication provides a secure way to manage user sign-ins using various methods like **Email/Password**, **Anonymous Login**, **Google Sign-In**, and more.
+To learn more, see [this document](./Authentication/)
 
 ## **2.2 Firestore Database (Saving & Loading Player Data)**
 Firestore is a NoSQL document-based database, which is good for saving structured game data.
-To learn more, see [this link]()
+To learn more, see [this document](./Firestore/)
 
 ## **2.3 Firebase Remote Config (Updating Game Data Remotely)**
 Remote Config lets you update game parameters dynamically.
-To learn more, see [this link]()
+To learn more, see [this document](./Remote%20Config/)
 
 ## **2.4 Firebase Cloud Messaging (Push Notifications)**
-To learn more, see [this link]()
+To learn more, see [this document]()
 
 ---
 
