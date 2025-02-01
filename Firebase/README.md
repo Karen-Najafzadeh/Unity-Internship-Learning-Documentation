@@ -73,8 +73,8 @@ Remote Config lets you update game parameters dynamically.
 To learn more, see [this document](./Remote%20Config/)
 
 ## **2.4 Firebase Cloud Messaging (Push Notifications)**
-To learn more, see [this document]()
-
+Firebase Cloud Messaging (FCM) is a service that allows you to send push notifications to users on iOS, Android, and web apps. For a Unity game, using Firebase Cloud Messaging (FCM) can help you keep players engaged by sending them notifications about updates, events, or in-game promotions.
+To learn more, see [this document](./Cloud%20Messaging/)
 ---
 
 # **3. Best Practices for Using Firebase in Unity**
