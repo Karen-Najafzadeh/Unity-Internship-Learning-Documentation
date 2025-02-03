@@ -44,6 +44,8 @@ This repository contains:
 
 13. **[ApplovinMax](./AppLovin%20MAX/)**
 
+14. **[Collisions Triggers and common Events](./Collisions%20Triggers%20and%20common%20Events)**
+
 
 
 ---
