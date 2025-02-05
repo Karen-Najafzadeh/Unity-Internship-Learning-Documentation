@@ -403,6 +403,330 @@ public class GameManager : MonoBehaviour
 
 ---
 
+## Custom object pooling 
+
+Creating a custom object pooling system in Unity ensures efficient reuse of game objects, improving performance by reducing instantiation and garbage collection overhead. Here's a step-by-step guide to writing a custom, **efficient** object pooling system.
+
+---
+
+## **Step 1: Create a Generic Object Pool Class**  
+We’ll create a reusable and efficient object pool that works with any object type.
+
+### **ObjectPool.cs**
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectPool<T> where T : Component
+{
+    private readonly T prefab;                         // Prefab to instantiate
+    private readonly Queue<T> pool = new Queue<T>();    // Queue to store pooled objects
+    private readonly Transform parent;                  // Parent transform for organized hierarchy
+
+    public ObjectPool(T prefab, int initialSize, Transform parent = null)
+    {
+        this.prefab = prefab;
+        this.parent = parent;
+        for (int i = 0; i < initialSize; i++)
+        {
+            T obj = CreateNewObject();
+            pool.Enqueue(obj);
+        }
+    }
+
+    private T CreateNewObject()
+    {
+        T newObj = Object.Instantiate(prefab, parent);
+        newObj.gameObject.SetActive(false);
+        return newObj;
+    }
+
+    public T Get()
+    {
+        if (pool.Count > 0)
+        {
+            T obj = pool.Dequeue();
+            obj.gameObject.SetActive(true);
+            return obj;
+        }
+        return CreateNewObject();
+    }
+
+    public void Release(T obj)
+    {
+        obj.gameObject.SetActive(false);
+        pool.Enqueue(obj);
+    }
+}
+```
+
+---
+
+## **Step 2: Create a Pool Manager**  
+You can create a **PoolManager** to manage multiple object pools for different object types.
+
+### **PoolManager.cs**
+```csharp
+using UnityEngine;
+
+public class PoolManager : MonoBehaviour
+{
+    public static PoolManager Instance { get; private set; }
+
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject enemyPrefab;
+
+    public ObjectPool<Bullet> bulletPool;
+    public ObjectPool<Enemy> enemyPool;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
+        bulletPool = new ObjectPool<Bullet>(bulletPrefab.GetComponent<Bullet>(), 20, transform);
+        enemyPool = new ObjectPool<Enemy>(enemyPrefab.GetComponent<Enemy>(), 10, transform);
+    }
+
+    public Bullet GetBullet() => bulletPool.Get();
+    public void ReleaseBullet(Bullet bullet) => bulletPool.Release(bullet);
+
+    public Enemy GetEnemy() => enemyPool.Get();
+    public void ReleaseEnemy(Enemy enemy) => enemyPool.Release(enemy);
+}
+```
+
+---
+
+## **Step 3: Use the Pool in Gameplay**  
+Here’s how to use the pool in a player’s shooting mechanic.
+
+### **PlayerShooting.cs**
+```csharp
+using UnityEngine;
+
+public class PlayerShooting : MonoBehaviour
+{
+    public Transform shootPoint;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        Bullet bullet = PoolManager.Instance.GetBullet();
+        bullet.transform.position = shootPoint.position;
+        bullet.transform.rotation = shootPoint.rotation;
+        bullet.Init(ReleaseBulletAfterTime);
+    }
+
+    private void ReleaseBulletAfterTime(Bullet bullet)
+    {
+        PoolManager.Instance.ReleaseBullet(bullet);
+    }
+}
+```
+
+---
+
+## **Step 4: Bullet Class Example**
+The bullet will return itself to the pool after a certain time.
+
+### **Bullet.cs**
+```csharp
+using UnityEngine;
+using System;
+
+public class Bullet : MonoBehaviour
+{
+    private Action<Bullet> releaseCallback;
+
+    public void Init(Action<Bullet> releaseCallback)
+    {
+        this.releaseCallback = releaseCallback;
+        Invoke(nameof(ReturnToPool), 2f);  // Return to pool after 2 seconds
+    }
+
+    private void ReturnToPool()
+    {
+        CancelInvoke();
+        releaseCallback?.Invoke(this);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ReturnToPool();  // Return to pool on collision
+    }
+}
+```
+
+---
+
+## **Advantages of This Approach**
+1. **Generic & Reusable**: Works with any object type (bullets, enemies, particles, etc.).
+2. **Efficient**: Avoids frequent instantiation and destruction.
+3. **Flexible**: Easy to expand for new object types.
+4. **Organized**: Uses parent transforms to keep the hierarchy clean.
+
+---
+
+## **Optional Optimizations**
+1. **Warm-Up the Pool**: Instantiate a set number of objects at the start to reduce runtime spikes.  
+2. **Expand with Capacity Limits**: Prevent excessive growth by setting a maximum pool size.  
+3. **Dynamic Pool Size**: Increase pool size if needed, but shrink it back when objects aren’t used for a while.  
+4. **Object Reuse Detection**: Add checks to prevent double-release of an object.  
+
+---
+
+Let's add a maximum pool size example or an expandable pool implementation
+
+---
+
+## Expandable Pool
+
+Let’s modify our `ObjectPool` class to implement **maximum pool size** and **dynamic expansion**. The goal is to expand the pool when necessary but stop adding new objects once it reaches a defined maximum size. We’ll also shrink the pool back when objects aren’t used for a while.
+
+---
+
+### **Updated ObjectPool with Maximum Size and Auto-Shrinking**
+
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectPool<T> where T : Component
+{
+    private readonly T prefab;                     // Prefab to instantiate
+    private readonly Queue<T> pool = new Queue<T>(); // Queue to store pooled objects
+    private readonly Transform parent;
+    
+    private int currentSize = 0;                     // Current size of the pool
+    private readonly int maxSize;                    // Maximum size the pool can grow to
+    private float lastShrinkTime = 0f;               // Last time the pool shrank
+    private readonly float shrinkInterval = 10f;     // Time interval to check for shrinking (in seconds)
+
+    public ObjectPool(T prefab, int initialSize, int maxSize, Transform parent = null)
+    {
+        this.prefab = prefab;
+        this.maxSize = maxSize;
+        this.parent = parent;
+
+        for (int i = 0; i < initialSize; i++)
+        {
+            T obj = CreateNewObject();
+            pool.Enqueue(obj);
+        }
+    }
+
+    private T CreateNewObject()
+    {
+        if (currentSize >= maxSize)
+        {
+            Debug.LogWarning("Pool has reached its maximum size!");
+            return null;
+        }
+
+        T newObj = Object.Instantiate(prefab, parent);
+        newObj.gameObject.SetActive(false);
+        currentSize++;
+        return newObj;
+    }
+
+    public T Get()
+    {
+        CheckAndShrinkPool();
+
+        if (pool.Count > 0)
+        {
+            T obj = pool.Dequeue();
+            obj.gameObject.SetActive(true);
+            return obj;
+        }
+
+        // If no available objects, create a new one if under max size
+        return CreateNewObject();
+    }
+
+    public void Release(T obj)
+    {
+        obj.gameObject.SetActive(false);
+        pool.Enqueue(obj);
+    }
+
+    private void CheckAndShrinkPool()
+    {
+        if (Time.time - lastShrinkTime < shrinkInterval)
+            return;
+
+        if (pool.Count > maxSize / 2)
+        {
+            int shrinkAmount = pool.Count / 4;  // Reduce by 25% of current pool size
+            for (int i = 0; i < shrinkAmount; i++)
+            {
+                T obj = pool.Dequeue();
+                Object.Destroy(obj.gameObject);
+                currentSize--;
+            }
+
+            Debug.Log($"Pool shrank by {shrinkAmount} objects.");
+        }
+
+        lastShrinkTime = Time.time;
+    }
+}
+```
+
+---
+
+### **What’s New?**
+1. **Maximum Size Limit**  
+   - Ensures the pool doesn’t grow beyond a set limit.  
+   - Logs a warning if the pool tries to expand beyond its maximum size.  
+
+2. **Auto-Shrinking**  
+   - Every `shrinkInterval` seconds, it checks if the pool size exceeds half of its maximum size.  
+   - If so, it removes and destroys a portion (25%) of the excess objects.  
+
+3. **Dynamic Growth**  
+   - Expands dynamically if more objects are needed, but only up to the maximum size.  
+
+---
+
+### **Usage Example**
+
+#### **PoolManager.cs**
+```csharp
+private void Awake()
+{
+    bulletPool = new ObjectPool<Bullet>(bulletPrefab.GetComponent<Bullet>(), 20, 100, transform);
+    enemyPool = new ObjectPool<Enemy>(enemyPrefab.GetComponent<Enemy>(), 10, 50, transform);
+}
+```
+
+Here, the bullet pool starts with **20 bullets** and can expand up to a **maximum of 100 bullets**. If the pool isn’t used much, it will **shrink back** periodically.
+
+---
+
+### **Testing the System**
+1. **Simulate High Usage**: Continuously request new bullets beyond the initial pool size.  
+   - Notice how the pool expands but stops once it hits the maximum size.  
+
+2. **Simulate Low Usage**: Let the pool rest for a while without requesting objects.  
+   - After `shrinkInterval` seconds, it shrinks the pool back.  
+
+---
+
+### **Optional Enhancements**
+1. **Object Validation**: Add a method to check if objects are in a valid state before reusing them.  
+2. **Debugging Tools**: Track active vs pooled objects for monitoring pool usage.  
+
+
+
 ## **Final Summary**
 1. **Factory Method Pattern**:  
    - `EnemyFactory` is responsible for creating enemy objects dynamically.  
