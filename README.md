@@ -58,6 +58,8 @@ This repository contains:
 
 20. **[Addressables](./Content/Addressables/)**
 
+21. **[Scroll View](./Content/Scroll%20View/)**
+
 
 
 ---
