@@ -18,45 +18,45 @@ This repository contains:
 
 ## 📂 Table of Contents
 
-1. **[design patterns](./Design-Patterns/)**  
+1. **[design patterns](./Content/Design-Patterns/)**  
 
-2. **[State Machine](./State%20Machine/)**
+2. **[State Machine](./Content/State%20Machine/)**
 
-3. **[Abstract cclasses and Interfaces](./Interfaces%20and%20abstract%20classes/)**
+3. **[Abstract cclasses and Interfaces](./Content/Interfaces%20and%20abstract%20classes/)**
 
-4. **[Delegates](./Delegates/)** 
+4. **[Delegates](./Content/Delegates/)** 
 
-5. **[Asynchronous programming](./Asynchronous%20programming/)**
+5. **[Asynchronous programming](./Content/Asynchronous%20programming/)**
 
-6. **[Events and Actions](./Events/)**
+6. **[Events and Actions](./Content/Events/)**
 
-7. **[Queues](./Queues/)**
+7. **[Queues](./Content/Queues/)**
 
-8. **[Nakama](./Nakama/)**   
+8. **[Nakama](./Content/Nakama/)**   
 
-9. **[Common Git commands](./Common%20Git%20Commands/)**
+9. **[Common Git commands](./Content/Common%20Git%20Commands/)**
 
-10. **[Dependency Injection](./Dependency%20Injection/)**
+10. **[Dependency Injection](./Content/Dependency%20Injection/)**
 
-11. **[Firebase](./Firebase/)**
+11. **[Firebase](./Content/Firebase/)**
 
-12. **[Editor Scripting](./Editor%20Scripting/)**
+12. **[Editor Scripting](./Content/Editor%20Scripting/)**
 
-13. **[ApplovinMax](./AppLovin%20MAX/)**
+13. **[ApplovinMax](./Content/AppLovin%20MAX/)**
 
-14. **[Collisions Triggers and common Events](./Collisions%20Triggers%20and%20common%20Events)**
+14. **[Collisions Triggers and common Events](./Content/Collisions%20Triggers%20and%20common%20Events)**
 
-15. **[GitLab SHH Key](./GitLab%20SHH%20key/)**
+15. **[GitLab SHH Key](./Content/GitLab%20SHH%20key/)**
 
-16. **[PlayerPrefs and data handling](./PlayerPrefs/)**
+16. **[PlayerPrefs and data handling](./Content/PlayerPrefs/)**
 
-17. **[JSON Serializing](./JSON%20Serializing/)**
+17. **[JSON Serializing](./Content/JSON%20Serializing/)**
 
-18. **[Scriptable Objects](./Scriptable%20Objects/)**
+18. **[Scriptable Objects](./Content/Scriptable%20Objects/)**
 
-19. **[Memory Management and Garbage Collection](./Memory%20Management%20And%20Garbage%20Collection/)**
+19. **[Memory Management and Garbage Collection](./Content/Memory%20Management%20And%20Garbage%20Collection/)**
 
-20. **[Addressables](./Addressables/)**
+20. **[Addressables](./Content/Addressables/)**
 
 
 
