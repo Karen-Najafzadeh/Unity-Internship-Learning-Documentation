@@ -90,6 +90,4 @@ If you’d like to connect or discuss game development, feel free to reach out:
 
 This documentation is a way to give back to the community while documenting my growth as a developer. I hope it helps others in their journey as much as it has helped me!
 
----
 
-Let me know if you’d like to tailor any part of this to be more specific or add any additional sections!
