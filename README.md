@@ -50,6 +50,8 @@ This repository contains:
 
 16. **[PlayerPrefs and data handling](./PlayerPrefs/)**
 
+17. **[JSON Serializing](./JSON%20Serializing/)**
+
 
 
 ---
