@@ -54,6 +54,8 @@ This repository contains:
 
 18. **[Scriptable Objects](./Scriptable%20Objects/)**
 
+19. **[Memory Management and Garbage Collection](./Memory%20Management%20And%20Garbage%20Collection/)**
+
 
 
 ---
