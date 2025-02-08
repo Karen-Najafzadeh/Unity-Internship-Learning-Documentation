@@ -585,6 +585,3 @@ public void ReturnObject(GameObject obj)
 
 In this version, new instances are still created on demand when the pool is empty, but every object—whether preloaded or dynamically created—will eventually be returned and available for reuse. If you require a more advanced management system (like capping or proactive expansion), you'll need to add additional logic to handle those scenarios.
 
----
-
-Feel free to ask if you need more examples or further modifications on how to implement a more dynamic or capped growing pool!
