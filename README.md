@@ -56,6 +56,8 @@ This repository contains:
 
 19. **[Memory Management and Garbage Collection](./Memory%20Management%20And%20Garbage%20Collection/)**
 
+20. **[Addressables](./Addressables/)**
+
 
 
 ---
