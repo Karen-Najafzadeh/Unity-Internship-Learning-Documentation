@@ -52,6 +52,8 @@ This repository contains:
 
 17. **[JSON Serializing](./JSON%20Serializing/)**
 
+18. **[Scriptable Objects](./Scriptable%20Objects/)**
+
 
 
 ---
