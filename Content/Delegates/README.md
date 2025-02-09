@@ -926,11 +926,13 @@ public class AdvancedCoroutineExample : MonoBehaviour {
 
 ---
 
-### More Example
+### Callbacks
 
-Below is an example that demonstrates the use of a callback using the built-in `Action<>` delegate. In this scenario, one script (the **DataFetcher**) simulates an asynchronous operation (like fetching data) and then calls a callback once the operation is complete. Another script (the **DataConsumer**) initiates the data fetch and handles the result via the callback.
+Below are examples that demonstrates the use of a callback using the built-in `Action<>` delegate and lambda Epressions. In this scenario, one script (the **DataFetcher**) simulates an asynchronous operation (like fetching data) and then calls a callback once the operation is complete. Another script (the **DataConsumer**) initiates the data fetch and handles the result via the callback.
 
 ---
+
+# Action<> callback
 
 ### **Script 1: DataFetcher.cs**
 
@@ -1029,6 +1031,105 @@ public class DataConsumer : MonoBehaviour
 This example shows how you can use a callback to decouple the data-fetching logic from the data-processing logic, making your code more modular and easier to manage. Enjoy integrating callbacks into your Unity projects!
 
 
+# Lambda callback
+
+Below is an example that demonstrates how to use lambda expressions as callbacks. In this scenario, one script (the **DataFetcherLambda**) simulates an asynchronous operation (such as fetching data) and then calls a callback. The callback is defined inline as a lambda expression in another script (the **DataConsumerLambda**).
+
+---
+
+### **Script 1: DataFetcherLambda.cs**
+
+This script simulates an asynchronous data-fetch operation using a coroutine. It defines a `FetchData` method that accepts a callback of type `Action<string>`. Once the simulated fetch is complete, it invokes the callback with the fetched data.
+
+```csharp
+using UnityEngine;
+using System;
+using System.Collections;
+
+public class DataFetcherLambda : MonoBehaviour
+{
+    /// <summary>
+    /// Simulates an asynchronous data fetch operation.
+    /// </summary>
+    /// <param name="onComplete">Callback that is invoked with the fetched data.</param>
+    public void FetchData(Action<string> onComplete)
+    {
+        StartCoroutine(FetchDataCoroutine(onComplete));
+    }
+
+    /// <summary>
+    /// A coroutine that simulates a delay (e.g., a network request) and then calls the callback.
+    /// </summary>
+    /// <param name="onComplete">The callback action to invoke after fetching data.</param>
+    /// <returns></returns>
+    private IEnumerator FetchDataCoroutine(Action<string> onComplete)
+    {
+        Debug.Log("DataFetcherLambda: Starting data fetch...");
+        // Simulate a delay for the data fetch (e.g., waiting for a server response)
+        yield return new WaitForSeconds(2f);
+
+        // Simulated fetched data
+        string fetchedData = "Data fetched using a lambda callback!";
+        Debug.Log("DataFetcherLambda: Data fetch complete.");
+
+        // Invoke the callback with the fetched data
+        onComplete?.Invoke(fetchedData);
+    }
+}
+```
+
+---
+
+### **Script 2: DataConsumerLambda.cs**
+
+This script demonstrates how to initiate the data fetch and handle the result using an inline lambda expression as the callback. Instead of defining a separate callback method, we pass a lambda directly when calling `FetchData`.
+
+```csharp
+using UnityEngine;
+
+public class DataConsumerLambda : MonoBehaviour
+{
+    // Reference to the DataFetcherLambda component.
+    public DataFetcherLambda fetcher;
+
+    void Start()
+    {
+        if (fetcher != null)
+        {
+            // Call FetchData and provide an inline lambda expression as the callback.
+            fetcher.FetchData((data) =>
+            {
+                // This code is executed when the data fetch is complete.
+                Debug.Log("DataConsumerLambda: Received data - " + data);
+                
+                // You can add additional processing for the fetched data here.
+            });
+        }
+        else
+        {
+            Debug.LogError("DataConsumerLambda: DataFetcherLambda reference is not set!");
+        }
+    }
+}
+```
+
+---
+
+### **How to Use This Example in Unity**
+
+1. **Scene Setup:**
+   - Create an empty GameObject and attach the **DataFetcherLambda** script.
+   - Create another GameObject and attach the **DataConsumerLambda** script.
+   - In the Inspector for the **DataConsumerLambda** GameObject, assign the GameObject containing **DataFetcherLambda** to the `fetcher` field.
+
+2. **Run the Scene:**
+   - When you press Play, the **DataConsumerLambda** script calls `FetchData` on **DataFetcherLambda**.
+   - The **DataFetcherLambda** script simulates a 2-second delay and then invokes the callback (defined as a lambda) with the fetched data.
+   - The lambda expression in **DataConsumerLambda** logs the fetched data to the console.
+
+This example demonstrates how lambda expressions can simplify callback implementations by allowing you to define the callback logic inline, keeping your code more concise and readable. Enjoy using lambda callbacks in your Unity projects!
+
+
 ---
 
 # **🛠️ Summary Table: Delegates in Unity**
@@ -1052,4 +1153,3 @@ This example shows how you can use a callback to decouple the data-fetching logi
 - **Anonymous methods, lambda expressions, and generic delegates** (`Action<>` and `Func<>`) simplify your code, making it more concise and readable.
 
 Feel free to expand or modify this guide further as you explore more complex delegate and event-driven programming scenarios in your Unity projects! 🚀
-```
