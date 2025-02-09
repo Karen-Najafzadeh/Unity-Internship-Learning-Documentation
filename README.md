@@ -47,7 +47,7 @@ This repository contains:
 
 ### Miscellaneous
 21. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
-22. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SSH%20Key/)**: Setting up SSH keys for GitLab.
+22. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
 23. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20Common%20Events/)**: Handling collisions, triggers, and common events in Unity.
 
 ---
