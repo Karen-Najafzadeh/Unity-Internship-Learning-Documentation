@@ -22,22 +22,22 @@ This repository contains:
 2. **[Abstract Classes and Interfaces](./Content/Basics/Interfaces%20and%20abstract%20classes/)**: Understanding the use of abstract classes and interfaces in C#.
 3. **[Delegates](./Content/Basics/Delegates/)**: Learning about delegates and their applications.
 4. **[Events and Actions](./Content/Basics/Events/)**: Exploring events and actions in Unity.
+5. **[Enums](./Content/Basics/Enums/)**: What are and how to use enums in Unity.
 
 ### Intermediate
-5. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
-6. **[Design Patterns](./Content/Intermediate/Design-Patterns/)**: Common design patterns used in game development.
-7. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
-8. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
-9. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
+6. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
+7. **[Design Patterns](./Content/Intermediate/Design-Patterns/)**: Common design patterns used in game development.
+8. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
+9. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
+10. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
 
 ### Advanced
-10. **[Dependency Injection](./Content/Advanced/Dependency%20Injection/)**: Implementing dependency injection for better code management.
-11. **[Memory Management and Garbage Collection](./Content/Advanced/Memory%20Management%20And%20Garbage%20Collection/)**: Optimizing memory usage and understanding garbage collection.
-12. **[JSON Serializing](./Content/Advanced/JSON%20Serializing/)**: Working with JSON for data serialization.
-13. **[Scriptable Objects](./Content/Advanced/Scriptable%20Objects/)**: Using scriptable objects for data management.
-14. **[Addressables](./Content/Advanced/Addressables/)**: Managing assets with the Addressable Asset System.
-15. **[Scroll View](./Content/Advanced/Scroll%20View/)**: Creating and customizing scroll views in Unity.
-16. **[Offline Notifications](./Content/Advanced/Offline%20Notification/)**: Sending notifications even when the app isn't running.
+11. **[Dependency Injection](./Content/Advanced/Dependency%20Injection/)**: Implementing dependency injection for better code management.
+12. **[Memory Management and Garbage Collection](./Content/Advanced/Memory%20Management%20And%20Garbage%20Collection/)**: Optimizing memory usage and understanding garbage collection.
+13. **[JSON Serializing](./Content/Advanced/JSON%20Serializing/)**: Working with JSON for data serialization.
+14. **[Scriptable Objects](./Content/Advanced/Scriptable%20Objects/)**: Using scriptable objects for data management.
+15. **[Addressables](./Content/Advanced/Addressables/)**: Managing assets with the Addressable Asset System.
+16. **[Scroll View](./Content/Advanced/Scroll%20View/)**: Creating and customizing scroll views in Unity.
 
 ### Tools and Integrations
 17. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
