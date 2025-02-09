@@ -19,14 +19,14 @@ This repository contains:
 
 ### Basics
 1. **[OOP](./Content/Basics/OOP/)**: Introduction to Object-Oriented Programming principles.
-2. **[Abstract Classes and Interfaces](./Content/Basics/Interfaces%20and%20Abstract%20Classes/)**: Understanding the use of abstract classes and interfaces in C#.
+2. **[Abstract Classes and Interfaces](./Content/Basics/Interfaces%20and%20abstract%20classes/)**: Understanding the use of abstract classes and interfaces in C#.
 3. **[Delegates](./Content/Basics/Delegates/)**: Learning about delegates and their applications.
 4. **[Events and Actions](./Content/Basics/Events/)**: Exploring events and actions in Unity.
 
 ### Intermediate
 5. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
-6. **[Design Patterns](./Content/Intermediate/Design%20Patterns/)**: Common design patterns used in game development.
-7. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20Programming/)**: Techniques for asynchronous programming in Unity.
+6. **[Design Patterns](./Content/Intemediate/Design-Patterns/)**: Common design patterns used in game development.
+7. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
 8. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
 9. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
 
