@@ -38,7 +38,7 @@ This repository contains:
 14. **[Scriptable Objects](./Content/Advanced/Scriptable%20Objects/)**: Using scriptable objects for data management.
 15. **[Addressables](./Content/Advanced/Addressables/)**: Managing assets with the Addressable Asset System.
 16. **[Scroll View](./Content/Advanced/Scroll%20View/)**: Creating and customizing scroll views in Unity.
-
+17. **[Offline Notifications](./Content/Advanced/Offline%20Notification/)**: Sending offline notifications event if the app isn't running.
 ### Tools and Integrations
 17. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
 18. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
