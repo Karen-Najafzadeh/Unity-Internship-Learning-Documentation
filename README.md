@@ -18,40 +18,41 @@ This repository contains:
 ## 📂 Table of Contents
 
 ### Basics
-1. **[OOP](./Content/Basics/OOP/)**: Introduction to Object-Oriented Programming principles.
-2. **[Fields and Properties](./Content/Basics/Fields%20and%20Properties/)**: Understanding fields and properties in C#.
-3. **[Abstract Classes and Interfaces](./Content/Basics/Interfaces%20and%20abstract%20classes/)**: Understanding the use of abstract classes and interfaces in C#.
-4. **[Delegates](./Content/Basics/Delegates/)**: Learning about delegates and their applications.
-5. **[Events and Actions](./Content/Basics/Events/)**: Exploring events and actions in Unity.
-6. **[Enums](./Content/Basics/Enums/)**: What are and how to use enums in Unity.
+1. **[Classes](./Content/Basics/Classes/)**
+2. **[OOP](./Content/Basics/OOP/)**: Introduction to Object-Oriented Programming principles.
+3. **[Fields and Properties](./Content/Basics/Fields%20and%20Properties/)**: Understanding fields and properties in C#.
+4. **[Abstract Classes and Interfaces](./Content/Basics/Interfaces%20and%20abstract%20classes/)**: Understanding the use of abstract classes and interfaces in C#.
+5. **[Delegates](./Content/Basics/Delegates/)**: Learning about delegates and their applications.
+6. **[Events and Actions](./Content/Basics/Events/)**: Exploring events and actions in Unity.
+7. **[Enums](./Content/Basics/Enums/)**: What are and how to use enums in Unity.
 
 ### Intermediate
-7. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
-8. **[Design Patterns](./Content/Intermediate/Design-Patterns/)**: Common design patterns used in game development.
-9. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
-10. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
-11. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
+8. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
+9. **[Design Patterns](./Content/Intermediate/Design-Patterns/)**: Common design patterns used in game development.
+10. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
+11. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
+12. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
 
 ### Advanced
-12. **[Dependency Injection](./Content/Advanced/Dependency%20Injection/)**: Implementing dependency injection for better code management.
-13. **[Memory Management and Garbage Collection](./Content/Advanced/Memory%20Management%20And%20Garbage%20Collection/)**: Optimizing memory usage and understanding garbage collection.
-14. **[JSON Serializing](./Content/Advanced/JSON%20Serializing/)**: Working with JSON for data serialization.
-15. **[Scriptable Objects](./Content/Advanced/Scriptable%20Objects/)**: Using scriptable objects for data management.
-16. **[Addressables](./Content/Advanced/Addressables/)**: Managing assets with the Addressable Asset System.
-17. **[Scroll View](./Content/Advanced/Scroll%20View/)**: Creating and customizing scroll views in Unity.
-18. **[Offline Notifications](./Content/Advanced/Offline%20Notification/)**: Sending offline notifications even if the app isn't running.
+13. **[Dependency Injection](./Content/Advanced/Dependency%20Injection/)**: Implementing dependency injection for better code management.
+14. **[Memory Management and Garbage Collection](./Content/Advanced/Memory%20Management%20And%20Garbage%20Collection/)**: Optimizing memory usage and understanding garbage collection.
+15. **[JSON Serializing](./Content/Advanced/JSON%20Serializing/)**: Working with JSON for data serialization.
+16. **[Scriptable Objects](./Content/Advanced/Scriptable%20Objects/)**: Using scriptable objects for data management.
+17. **[Addressables](./Content/Advanced/Addressables/)**: Managing assets with the Addressable Asset System.
+18. **[Scroll View](./Content/Advanced/Scroll%20View/)**: Creating and customizing scroll views in Unity.
+19. **[Offline Notifications](./Content/Advanced/Offline%20Notification/)**: Sending offline notifications even if the app isn't running.
 
 ### Tools and Integrations
-19. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
-20. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
-21. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
-22. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting/)**: Customizing the Unity Editor with scripts.
-23. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
+20. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
+21. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
+22. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
+23. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting/)**: Customizing the Unity Editor with scripts.
+24. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
 
 ### Miscellaneous
-24. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
-25. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
-26. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
+25. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
+26. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
+27. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
 
 ---
 
