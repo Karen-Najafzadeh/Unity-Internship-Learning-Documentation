@@ -25,7 +25,7 @@ This repository contains:
 
 ### Intermediate
 5. **[State Machine](./Content/Intermediate/State%20Machine/)**: Implementing state machines for game logic.
-6. **[Design Patterns](./Content/Intemediate/Design-Patterns/)**: Common design patterns used in game development.
+6. **[Design Patterns](./Content/Intermediate/Design-Patterns/)**: Common design patterns used in game development.
 7. **[Asynchronous Programming](./Content/Intermediate/Asynchronous%20programming/)**: Techniques for asynchronous programming in Unity.
 8. **[Queues](./Content/Intermediate/Queues/)**: Using queues for managing tasks and events.
 9. **[LINQ](./Content/Intermediate/LINQ/)**: Leveraging LINQ for data manipulation.
