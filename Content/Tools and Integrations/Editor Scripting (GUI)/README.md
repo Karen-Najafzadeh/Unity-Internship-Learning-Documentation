@@ -13,7 +13,140 @@ By extending the editor, you can save a lot of time on repetitive tasks, make yo
 
 ---
 
-### **🛠 Getting Started with Editor Scripting**
+# **GUILayout** and **EditorGUILayout**
+
+When working with Unity’s Editor scripting in C#, you’ll often create custom user interfaces (UIs) for your tools and inspectors. Although you might see references to “GUILayout” when writing editor code, it’s important to clarify the distinction between two related (but different) classes:
+
+- **GUILayout** (found in the UnityEngine namespace)  
+- **EditorGUILayout** (found in the UnityEditor namespace)
+
+
+- **GUILayout** for general-purpose, immediate mode GUI layout (e.g. grouping elements, defining spaces, and handling buttons or labels).  
+- **EditorGUILayout** for editor-specific controls that automatically handle layout and serialization (for example, object fields, property fields, and other controls that integrate with Unity’s Inspector).
+
+Below is an in‐depth look at what you need to know about these systems.
+
+---
+
+## 1. Immediate Mode GUI and GUILayout
+
+Unity’s immediate mode GUI system works by redrawing its controls every frame in an `OnGUI()` method. The **GUILayout** class provides a set of static methods that let you build a UI without manually specifying pixel positions. Instead, you use layout groups that automatically arrange controls vertically, horizontally, or inside scroll views.
+
+### Key Methods in GUILayout
+
+Some of the most commonly used methods include:
+
+- **Layout Groups:**  
+  - `GUILayout.BeginHorizontal()` / `GUILayout.EndHorizontal()`  
+  - `GUILayout.BeginVertical()` / `GUILayout.EndVertical()`
+  - `GUILayout.BeginArea(Rect)` / `GUILayout.EndArea()`
+
+- **Control Methods:**  
+  - `GUILayout.Button(string)` – creates a clickable button.  
+  - `GUILayout.Label(string)` – displays a text label.  
+  - `GUILayout.TextField(string)` – shows an editable text field.  
+  - `GUILayout.Toggle(bool, string)` – displays an on/off toggle.
+
+- **Layout Options:**  
+  These allow you to specify width, height, expansion properties, etc. For example:  
+  - `GUILayout.Width(float)`  
+  - `GUILayout.Height(float)`  
+  - `GUILayout.ExpandWidth(bool)` and `GUILayout.ExpandHeight(bool)`
+
+These methods are all static and are called inside the `OnGUI()` function to build the UI dynamically. This style is very flexible and can adapt to different window sizes and screen resolutions without hard-coding positions.
+
+*(See Unity’s GUILayout documentation for more details citeturn0search0.)*
+
+---
+
+## 2. EditorGUILayout: The Editor-Specific Helper
+
+When creating custom editors, Unity provides the **EditorGUILayout** class (in the UnityEditor namespace) as an extension of the basic layout system. While it uses many of the same concepts as GUILayout (automatic layout, grouping, etc.), it also offers controls tailored for editor use.
+
+### Features of EditorGUILayout
+
+- **Specialized Controls:**  
+  Methods like `EditorGUILayout.ObjectField()`, `EditorGUILayout.PropertyField()`, and `EditorGUILayout.EnumPopup()` provide controls that work seamlessly with Unity’s serialization and undo systems. These controls simplify making custom inspectors for your scripts.
+
+- **Automatic Integration:**  
+  EditorGUILayout not only arranges the UI elements automatically but also integrates with the SerializedObject/SerializedProperty system. This means that you can easily create editors that support multi-object editing, Undo/Redo operations, and live updates in the Inspector.
+
+- **Ease of Use in Custom Editors:**  
+  Because editor windows and custom inspectors use these methods, you can rapidly prototype tools. For example, a custom inspector might include a vertical group for standard fields and then a horizontal group for custom buttons:
+
+  ```csharp
+  using UnityEditor;
+  using UnityEngine;
+
+  [CustomEditor(typeof(MyComponent))]
+  public class MyComponentEditor : Editor {
+      public override void OnInspectorGUI() {
+          // Draw default properties using serialized properties.
+          SerializedProperty myProp = serializedObject.FindProperty("myValue");
+          EditorGUILayout.PropertyField(myProp);
+
+          // Add a button using GUILayout.
+          if (GUILayout.Button("Do Something")) {
+              Debug.Log("Button pressed!");
+          }
+
+          // Use an object field with EditorGUILayout.
+          SerializedProperty objProp = serializedObject.FindProperty("someObject");
+          objProp.objectReferenceValue = EditorGUILayout.ObjectField("Some Object",
+              objProp.objectReferenceValue, typeof(GameObject), true);
+
+          // Apply changes to the serialized object.
+          serializedObject.ApplyModifiedProperties();
+      }
+  }
+  ```
+
+  In the above snippet, you see both **EditorGUILayout** (for fields that need editor integration) and **GUILayout** (for a simple button) working together.  
+  *(Refer to Unity’s EditorGUILayout documentation citeturn0search1 for a full list of available methods.)*
+
+---
+
+## 3. How and When to Use These Systems
+
+### Use Cases
+
+- **Runtime UI:**  
+  While GUILayout is part of the immediate mode GUI system and can be used at runtime (though Unity’s newer UI system is generally preferred), its primary strength lies in rapid prototyping or debugging overlays.
+
+- **Editor Extensions:**  
+  When building custom editor windows, property drawers, or inspectors, you’ll almost always use **EditorGUILayout**. It’s specifically designed to interface with Unity’s editor backend, handling serialized properties and providing built-in support for Undo/Redo operations.
+
+### Best Practices
+
+- **Grouping Controls:**  
+  Use Begin/EndHorizontal or Begin/EndVertical to logically group controls. This not only organizes your code but also makes your UI more understandable.
+
+- **Avoid Heavy Processing in OnGUI():**  
+  Since OnGUI is called multiple times per frame, try to minimize heavy computations within it.
+
+- **Separation of Concerns:**  
+  For editor scripting, consider separating layout code (using GUILayout/EditorGUILayout) from your business logic. This makes it easier to maintain and update your custom tools.
+
+- **Combine with Serialized Properties:**  
+  When editing fields of a MonoBehaviour or ScriptableObject, use the SerializedObject/SerializedProperty pattern along with EditorGUILayout. This ensures that changes are recorded properly and can be undone.  
+  *(A detailed explanation of EditorGUILayout’s benefits in custom editors can be found in many online guides, such as the article on Sharp Coder Blog citeturn0search2 and Unity Editor Scripting Series on Medium citeturn0search9.)*
+
+---
+
+## 4. Summary
+
+- **GUILayout (UnityEngine):**  
+  Provides a set of static methods for building immediate mode GUIs with automatic layout. It’s versatile and can be used both at runtime and in the editor, though its design is best suited for quick-and-dirty UIs or editor tools.
+
+- **EditorGUILayout (UnityEditor):**  
+  Extends the basic layout system with controls that are editor-specific. It simplifies creating custom inspectors and editor windows by integrating with Unity’s serialization and undo systems.
+
+- **Common Patterns:**  
+  Custom editors often mix GUILayout for simple layout tasks (like placing buttons or labels) with EditorGUILayout for more complex, data-bound fields. This combination allows you to build powerful, flexible UIs inside the Unity Editor.
+
+By understanding and using these classes effectively, you can create custom editor tools that are both robust and easy to use, ultimately improving your workflow within Unity.
+
+---
 
 #### **1️⃣ Setting up Editor Scripts**
 Editor scripts in Unity must be placed inside a folder named **Editor** (this is a special folder that Unity recognizes). Anything inside this folder will not be included in your game build.
@@ -382,3 +515,12 @@ assing the script to a game object and from the inspector, you can see a button 
 ---
 
 Editor scripting can significantly boost your productivity by automating tedious tasks, improving your workflows, and providing a better development experience. Whether it's creating custom tools or fine-tuning the way components are displayed in the Inspector, Unity's editor scripting capabilities are invaluable for any serious game developer.
+
+---
+
+For more details, you may consult the official Unity documentation and various tutorials available online:  
+- Unity’s GUILayout Scripting API citeturn0search0  
+- Unity’s EditorGUILayout Scripting API citeturn0search1
+
+This overview should give you a comprehensive picture of how GUILayout and its editor-specific counterpart work in Unity C# editor scripting.
+

@@ -46,7 +46,7 @@ This repository contains:
 20. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
 21. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
 22. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
-23. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting/)**: Customizing the Unity Editor with scripts.
+23. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting%20(GUI)/)**: Customizing the Unity Editor with scripts.
 24. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
 
 ### Miscellaneous
