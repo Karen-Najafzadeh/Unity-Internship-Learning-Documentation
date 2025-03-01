@@ -45,6 +45,7 @@ This repository contains:
 ### Tools and Integrations
 20. **[GameAnalytics](./Content/Tools%20and%20Integrations/GameAnalytics/)**: Comprehensive Guide to Integrating GameAnalytics SDK in Unity
 21. **[Facebook](./Content/Tools%20and%20Integrations/Facebook/)** : Comprehensive Guide to Integrating Facebook SDK in Unity
+22. **[Unity IAP](./Content/Tools%20and%20Integrations/Unity%20IAP/)** : Comprehensive Guide to Integrating Unity IAP in Unity
 22. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
 23. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
 24. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
