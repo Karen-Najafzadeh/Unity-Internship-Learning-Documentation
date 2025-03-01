@@ -46,16 +46,16 @@ This repository contains:
 20. **[GameAnalytics](./Content/Tools%20and%20Integrations/GameAnalytics/)**: Comprehensive Guide to Integrating GameAnalytics SDK in Unity
 21. **[Facebook](./Content/Tools%20and%20Integrations/Facebook/)** : Comprehensive Guide to Integrating Facebook SDK in Unity
 22. **[Unity IAP](./Content/Tools%20and%20Integrations/Unity%20IAP/)** : Comprehensive Guide to Integrating Unity IAP in Unity
-22. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
-23. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
-24. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
-25. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting%20(GUI)/)**: Customizing the Unity Editor with scripts.
-26. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
+23. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
+24. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
+25. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
+26. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting%20(GUI)/)**: Customizing the Unity Editor with scripts.
+27. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
 
 ### Miscellaneous
-27. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
-28. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
-29. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
+28. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
+29. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
+30. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
 
 ---
 
