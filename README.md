@@ -43,6 +43,7 @@ This repository contains:
 19. **[Offline Notifications](./Content/Advanced/Offline%20Notification/)**: Sending offline notifications even if the app isn't running.
 
 ### Tools and Integrations
+20. **[GameAnalytics](./Content/Tools%20and%20Integrations/GameAnalytics/)**: Comprehensive Guide to Integrating GameAnalytics SDK in Unity
 20. **[Nakama](./Content/Tools%20and%20Integrations/Nakama/)**: Integrating Nakama for backend services.
 21. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
 22. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
