@@ -50,7 +50,7 @@ This repository contains:
 24. **[Firebase](./Content/Tools%20and%20Integrations/Firebase/)**: Using Firebase for real-time database and authentication.
 25. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
 26. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting%20(GUI)/)**: Customizing the Unity Editor with scripts.
-27. **[Steam](./Content/Tools%20and%20Integrations/Steam/GettingStarted/)** : Getting started with SteamWorks.NET SDK
+27. **[Steam](./Content/Tools%20and%20Integrations/Steam/)** : Getting started with SteamWorks.NET SDK
 27. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
 
 ### Miscellaneous
