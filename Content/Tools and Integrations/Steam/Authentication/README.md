@@ -417,6 +417,5 @@ User authentication with Steam is a key component for integrating Steamworks fea
 
 If you have any further questions or run into issues, refer to the official documentation or community forums for additional assistance.
 
-*References used: citeturn0search5, citeturn0search7, Steamworks Official Documentation.*
 
 Happy coding and secure gaming!
