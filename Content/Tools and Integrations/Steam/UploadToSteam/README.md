@@ -182,3 +182,7 @@ When you have a new Unity build to push:
   SteamPipe only uploads changed files, so small hotfixes upload quickly.  
 - **Error Logs:**  
   Check `ContentBuilder/logs/last_build.log` for detailed errors if an upload fails.
+
+---
+
+For more info, [check this video out](https://www.youtube.com/watch?v=gwMPvEFFomE)
