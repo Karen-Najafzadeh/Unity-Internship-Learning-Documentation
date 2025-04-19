@@ -66,21 +66,53 @@ When a user attempts to authenticate, your Unity game should:
 
 ### B. Code Sample
 
-Below is an example of how to generate and use a Steam authentication ticket in Unity:
+Below is an example of how to generate and use a Steam authentication ticket in Unity and some useful methoods:
 
 ```csharp
 using UnityEngine;
 using System.Text;
 using Steamworks;
+using Nightingale.Utilitys;
+using System.Collections.Generic;
 
-public class SteamAuthExample : MonoBehaviour
+/// <summary>
+/// Manages Steam authentication for the Unity application.
+/// Handles generating Steam authentication tickets, signing in with Steam, and retrieving user information.
+/// </summary>
+public class SteamAuthManager : MonoBehaviour
 {
+    /// <summary>
+    /// Singleton instance of the SteamAuthExample class.
+    /// </summary>
+    public static SteamAuthManager Instance { get; private set; }
+
     private HAuthTicket m_HAuthTicket;
+    private Callback<GetTicketForWebApiResponse_t> m_AuthTicketForWebApiResponseCallback;
+    private string m_SessionTicket;
+    private string identity = "unityauthenticationservice";
+
+
+    #region initialization
+    /// <summary>
+    /// Ensures a single instance of the SteamAuthExample class exists.
+    /// </summary>
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     /// <summary>
-    /// Called when the user clicks the login button.
+    /// Called when the script starts. Initializes Steam authentication and retrieves the session ticket.
     /// </summary>
-    public void OnLoginButtonClicked()
+    public void Start()
     {
         if (!SteamManager.Initialized)
         {
@@ -88,25 +120,48 @@ public class SteamAuthExample : MonoBehaviour
             return;
         }
 
-        string steamToken = GetSteamAuthToken();
-        Debug.Log("Steam Auth Token: " + steamToken);
-        
-        // Example: Send the steamToken to your backend server for verification.
-        // Your server should call Steam Web API: 
-        // https://api.steampowered.com/ISteamUserAuth/AuthenticateUserTicket/v1/?key=YOUR_API_KEY&appid=YOUR_APP_ID&ticket=steamToken
+        m_SessionTicket = GetSteamAuthToken();
+        Debug.Log("Steam Auth Token: " + m_SessionTicket);
+        SignInWithSteam();
+    }
+
+    /// <summary>
+    /// Initiates the Steam sign-in process by requesting an authentication ticket for the Web API.
+    /// </summary>
+    void SignInWithSteam()
+    {
+        m_AuthTicketForWebApiResponseCallback = Callback<GetTicketForWebApiResponse_t>.Create(OnAuthCallback);
+        SteamUser.GetAuthTicketForWebApi(identity);
+    }
+
+    /// <summary>
+    /// Callback method invoked when the authentication ticket for the Web API is received.
+    /// Logs the session ticket and the user's Steam persona name.
+    /// </summary>
+    /// <param name="callback">The callback data containing the authentication ticket response.</param>
+    void OnAuthCallback(GetTicketForWebApiResponse_t callback)
+    {
+        m_AuthTicketForWebApiResponseCallback.Dispose();
+        m_AuthTicketForWebApiResponseCallback = null;
+        Debug.Log("Steam Login success. Session Ticket: " + m_SessionTicket);
+        Debug.Log("Steam Persona Name: " + GetPersonaName());
+        Debug.Log("Steam ID: " +GetSteamID());
+        Debug.Log("Steam Friends List: " + GetFriendsList());
     }
 
     /// <summary>
     /// Generates a Steam authentication ticket and converts it to a hex string.
     /// </summary>
-    /// <returns>Hex string of the Steam auth ticket.</returns>
+    /// <returns>A hex string representation of the Steam authentication ticket.</returns>
     public string GetSteamAuthToken()
     {
         byte[] ticketBlob = new byte[1024];
         uint ticketSize;
+
         // Request an authentication ticket from Steam.
-        m_HAuthTicket = SteamUser.GetAuthSessionTicket(ticketBlob, ticketBlob.Length, out ticketSize);
-        
+        SteamNetworkingIdentity steamNetworkingIdentity = new SteamNetworkingIdentity();
+        m_HAuthTicket = SteamUser.GetAuthSessionTicket(ticketBlob, ticketBlob.Length, out ticketSize, ref steamNetworkingIdentity);
+
         if (ticketSize == 0)
         {
             Debug.LogError("Failed to get a valid Steam auth ticket.");
@@ -120,9 +175,54 @@ public class SteamAuthExample : MonoBehaviour
         }
         return tokenBuilder.ToString();
     }
+    #endregion
+    #region methods
 
     /// <summary>
-    /// Optionally cancel the auth ticket once it’s no longer needed.
+    /// Gets the user's Steam ID as a hex string.
+    /// </summary>
+    /// <returns>A hex string representation of the Steam User ID.</returns>
+    public string GetSteamID()
+    {
+        CSteamID id = SteamUser.GetSteamID();
+        return id.m_SteamID.ToString();               
+    }
+
+    /// <summary>
+    /// Gets the user's Steam persona name.
+    /// </summary>
+    /// <returns>Returns the player's Name.</returns>
+
+    public string GetPersonaName()
+    {
+        return SteamFriends.GetPersonaName();         
+    }
+
+    /// <summary>
+    /// Gets the list of the player's friends' display names.
+    /// </summary>
+    /// <returns>A list of Player's friends names</returns>
+    public List<string> GetFriendsList()
+    {
+        int friendCount = SteamFriends.GetFriendCount(EFriendFlags.k_EFriendFlagImmediate);
+        var names = new List<string>(friendCount);
+        for (int i = 0; i < friendCount; i++)
+        {
+            CSteamID friendId = SteamFriends.GetFriendByIndex(i, EFriendFlags.k_EFriendFlagImmediate);
+            names.Add(SteamFriends.GetFriendPersonaName(friendId));
+        }
+        if (names == null || names.Count == 0)
+        {
+            Debug.Log("No friends found.");
+            return null;
+        }
+        return names;// List of the user’s friends’ display names
+    }
+
+    #endregion
+
+    /// <summary>
+    /// Cancels the Steam authentication ticket when it is no longer needed.
     /// </summary>
     public void CancelAuthTicket()
     {
