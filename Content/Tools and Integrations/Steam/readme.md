@@ -12,6 +12,7 @@ Below is an in‐depth guide covering every essential aspect of getting started 
 3. **[Leaderboards](./Leaderboards/)**: Introduction to Steam Leaderboards.
 4. **[Steam Cloud](./SteamCloud/)** : Introduction to Steam Cloud
 5. **[Statistics](./Statistics/)** : Introduction to  User Statistics and Data
+6. **[How to upload the game on Steam](./UploadToSteam/)** : A guide on how to upload the game on Steam.
 
 
 **Steamworks SDK:**  
