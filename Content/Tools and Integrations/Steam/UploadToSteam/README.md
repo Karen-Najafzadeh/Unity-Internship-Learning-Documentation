@@ -4,16 +4,16 @@ Below is a breakdown of the core Steamworks concepts you’ll encounter when upl
 
 ## Summary
 
-A **Depot** is a named group of files (game executables, assets, DLC, etc.) identified by a Depot ID citeturn1search2. A **Build** is a snapshot of one or more depots at a specific point in time, representing exactly what users will download citeturn1search0. A **Branch** (or Beta) is a named track (e.g. “default”, “beta”) that you can assign builds to, controlling which build version users on each branch receive citeturn1search3. A **Package** is an SKU or license that bundles together applications and their depots for sale or key activation citeturn1search1. Under the hood, **SteamPipe** (the content‑delivery system) and **SteamCMD** (the CLI tool) orchestrate uploading depots and builds, assigning them to branches, and bundling them into packages citeturn2search1turn2search2.
+A **Depot** is a named group of files (game executables, assets, DLC, etc.) identified by a Depot ID . A **Build** is a snapshot of one or more depots at a specific point in time, representing exactly what users will download . A **Branch** (or Beta) is a named track (e.g. “default”, “beta”) that you can assign builds to, controlling which build version users on each branch receive . A **Package** is an SKU or license that bundles together applications and their depots for sale or key activation . Under the hood, **SteamPipe** (the content‑delivery system) and **SteamCMD** (the CLI tool) orchestrate uploading depots and builds, assigning them to branches, and bundling them into packages.
 
 ---
 
 ## Depots
 
 - **Definition:**  
-  A depot is a logical grouping of files that Steam delivers as a single unit. Each depot has a unique Depot ID and can represent your base game, DLC, language‑specific assets, or other add‑ons citeturn1search2.  
+  A depot is a logical grouping of files that Steam delivers as a single unit. Each depot has a unique Depot ID and can represent your base game, DLC, language‑specific assets, or other add‑ons .  
 - **Mounting Rules:**  
-  Steam’s client “mounts” owned depots by priority: later‑listed depots override earlier ones. You can restrict depots to specific OSes or languages in the Steamworks UI citeturn1search2.  
+  Steam’s client “mounts” owned depots by priority: later‑listed depots override earlier ones. You can restrict depots to specific OSes or languages in the Steamworks UI .  
 - **Use Case:**  
   Split your game into multiple depots (e.g., Windows vs. macOS builds, high‑res textures, DLC), so players only download what they own and need.
 
@@ -22,20 +22,20 @@ A **Depot** is a named group of files (game executables, assets, DLC, etc.) iden
 ## Builds
 
 - **Definition:**  
-  A build is the result of uploading your content via SteamPipe; it bundles one or more depot revisions into a versioned snapshot. Builds record the exact set of files (manifest) users will get when they download that build citeturn1search0.  
+  A build is the result of uploading your content via SteamPipe; it bundles one or more depot revisions into a versioned snapshot. Builds record the exact set of files (manifest) users will get when they download that build .  
 - **Uploading:**  
-  Using SteamCMD or SteamPipe GUI, you run a build script (`app_build.vdf`) which references depot scripts (`depot_*.vdf`), sending content to Valve’s servers citeturn2search2.  
+  Using SteamCMD or SteamPipe GUI, you run a build script (`app_build.vdf`) which references depot scripts (`depot_*.vdf`), sending content to Valve’s servers .  
 - **Manifest:**  
-  Each build generates a manifest listing file paths, sizes, and hashes. You can view manifests in the “Your Builds” page in App Admin citeturn1search0.
+  Each build generates a manifest listing file paths, sizes, and hashes. You can view manifests in the “Your Builds” page in App Admin .
 
 ---
 
 ## Branches (Betas)
 
 - **Definition:**  
-  Branches (also called Betas) are named channels—like “default”, “alpha”, “beta”—that you assign specific builds to. This lets you give testers early access without affecting the main release citeturn1search3.  
+  Branches (also called Betas) are named channels—like “default”, “alpha”, “beta”—that you assign specific builds to. This lets you give testers early access without affecting the main release .  
 - **Management:**  
-  From the Builds page in App Admin, you create or rename branches and choose a password (optional) to gate access citeturn1search3.  
+  From the Builds page in App Admin, you create or rename branches and choose a password (optional) to gate access .  
 - **Use Case:**  
   Push an experimental build to a “qa” branch or limited “pre‐release” tester group while keeping main users on the stable “default” build.
 
@@ -44,28 +44,27 @@ A **Depot** is a named group of files (game executables, assets, DLC, etc.) iden
 ## Packages
 
 - **Definition:**  
-  A package (SKU/license) is a collection of one or more applications and their depots that customers purchase or redeem via key activation. It maps directly to what content a user owns citeturn1search1.  
+  A package (SKU/license) is a collection of one or more applications and their depots that customers purchase or redeem via key activation. It maps directly to what content a user owns .  
 - **Types:**  
   - **Store + CD‑Key Package:** Default for selling in Steam store or via keys.  
   - **Store‑Only / CD‑Key‑Only Packages:** Limit a package to store sales or key activation.  
-  - **Beta/Dev Comp Packages:** Special packages that grant content to tester or developer accounts without purchase citeturn1search1.  
+  - **Beta/Dev Comp Packages:** Special packages that grant content to tester or developer accounts without purchase .  
 - **Relationship:**  
-  When you define new depots or builds, you must add them to the appropriate package(s) to grant access to users (e.g., testers via Dev Comp, or buyers via Store package) citeturn1search4.
+  When you define new depots or builds, you must add them to the appropriate package(s) to grant access to users (e.g., testers via Dev Comp, or buyers via Store package).
 
 ---
 
 ## SteamPipe & SteamCMD
 
 - **SteamPipe:**  
-  The HTTP‑based content delivery system for Steam. Instead of Valve manually pushing updates, developers upload builds and depots via scripts, and SteamPipe handles distribution and caching citeturn2search1.  
+  The HTTP‑based content delivery system for Steam. Instead of Valve manually pushing updates, developers upload builds and depots via scripts, and SteamPipe handles distribution and caching .  
 - **SteamCMD:**  
-  A command‑line version of the Steam client used to automate depot and build uploads. It reads your VDF scripts and pushes content to Steam’s servers citeturn2search2.
+  A command‑line version of the Steam client used to automate depot and build uploads. It reads your VDF scripts and pushes content to Steam’s servers .
 
 ---
 
 With this understanding of depots, builds, branches, and packages—and by leveraging SteamPipe/SteamCMD—you can confidently structure and deliver your Unity game on the Steam platform.
 
-Below is a fleshed‑out `README.md` snippet covering **Uploading The Game** and **Updating The Game**, with extended details and placeholders for images. You’ll want to place actual screenshots (e.g. in an `assets/` or `docs/images/` folder) and update the paths accordingly.
 
 ---
 

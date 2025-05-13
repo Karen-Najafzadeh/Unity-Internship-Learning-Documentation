@@ -240,7 +240,6 @@ public class SteamAuthManager : MonoBehaviour
 - **Usage:**  
   The generated token should then be sent to your secure backend where you use Steam’s Web API (specifically the `ISteamUserAuth/AuthenticateUserTicket` endpoint) to verify its legitimacy.
 
-*References: citeturn0search5, citeturn0search7*
 
 ---
 
@@ -293,7 +292,6 @@ Never trust solely the client’s data. Always validate and verify tickets serve
 - **Monitoring and Logging:**  
   Keep detailed logs on both client and server to track authentication attempts, failures, and to assist in debugging any issues that may arise.
 
-*References: citeturn0search5, citeturn0search7, Steamworks official documentation.*
 
 ---
 

@@ -51,12 +51,13 @@ This repository contains:
 25. **[AppLovin MAX](./Content/Tools%20and%20Integrations/AppLovin%20MAX/)**: Implementing AppLovin MAX for ad monetization.
 26. **[Editor Scripting](./Content/Tools%20and%20Integrations/Editor%20Scripting%20(GUI)/)**: Customizing the Unity Editor with scripts.
 27. **[Steam](./Content/Tools%20and%20Integrations/Steam/)** : Getting started with SteamWorks.NET SDK
-27. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
+28. **[PlayerPrefs and Data Handling](./Content/Tools%20and%20Integrations/PlayerPrefs/)**: Managing player preferences and data storage.
 
 ### Miscellaneous
-28. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
-29. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
-30. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
+29. **[Common Git Commands](./Content/Miscellaneous/Common%20Git%20Commands/)**: Essential Git commands for version control.
+30. **[GitLab SSH Key](./Content/Miscellaneous/GitLab%20SHH%20key/)**: Setting up SSH keys for GitLab.
+31. **[Collisions, Triggers, and Common Events](./Content/Miscellaneous/Collisions%20Triggers%20and%20common%20Events/)**: Handling collisions, triggers, and common events in Unity.
+32. **[Sign And Natorize MacOS apps](./Content/Miscellaneous/Sign%20and%20Natorize%20Mac%20Apps/)**
 
 ---
 
